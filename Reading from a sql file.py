@@ -3,6 +3,7 @@ import ReadingFromSqlModule as rfsm
 
 window = Tk()
 window.title('Reading from a sql database')
+window.iconbitmap('loupe.ico')
 
 r = IntVar()
 
