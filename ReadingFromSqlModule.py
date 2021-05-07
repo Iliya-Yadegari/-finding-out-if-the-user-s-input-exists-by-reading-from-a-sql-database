@@ -62,6 +62,7 @@ def write_fun(lastName):
         
         mycursor.execute(sqlCommand,values)
         mydb.commit()
+        messagebox.showinfo('Result','Your infomation has been successfully stored.')
         
 def read_fun(name_e,lastName_e,age_e):
     mycursor.execute('SELECT * FROM writtenres')
