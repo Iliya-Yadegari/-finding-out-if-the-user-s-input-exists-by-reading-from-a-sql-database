@@ -70,15 +70,23 @@ def read_fun(name_e,lastName_e,age_e):
     result = mycursor.fetchall()
     name_e += lastName_e
     name_e += age_e    
+    
+    res_len = len(result)
+    
+    count = 0
+    
     if name_e == '':
-        print(all_data)
         messagebox.showerror('Error','You have left one or more of the areas blank')
         
-    elif ''.join(result[0]) == name_e:
-        messagebox.showinfo('Result','This row exists')
+    for i in result:
     
-    else:
-        messagebox.showinfo('Result','This row does not exist')
+        if ''.join(i) == name_e:
+            messagebox.showinfo('Result','This row exists')
+        
+        else:
+            count = count + 1
+            if count == res_len:
+                messagebox.showinfo('Result','This row does not exist')
     
 mydb = msc.connect(
     host = 'localhost',
